@@ -1,0 +1,149 @@
+
+
+<script type="text/javascript">
+    var obj;
+    var obj2;
+function showHideDiv(id){
+    
+   obj = document.getElementById(id);
+    if (obj.style.display==="none"){
+      obj.style.display='block';     
+    } else if(obj.style.display==="block"){
+      obj.style.display='none';
+    }
+    if (obj2 !== null)
+    {
+   obj2.style.display='none';
+    }
+}
+function showHideDiv2(id){
+    obj.style.display='none';
+     obj2 = document.getElementById(id);
+    if (obj2.style.display==="none"){
+      obj2.style.display='block';     
+    } else if(obj2.style.display==="block"){
+      obj2.style.display='none';
+    }
+}
+</script>
+<p>
+
+<div class="row">
+                    <div class="col-lg-1">
+                          <div class="table-responsive" >
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Oferta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      <td><a onclick="showHideDiv('div-1')">Rutinoskorbin</a></td>          
+                                  </tr>
+                                   <tr>
+                                        <td><a onclick="showHideDiv2('div-2')">Ibuprom</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+</p>
+<p></p>
+
+
+<div class="row">
+                    <div class="col-md-6">                        
+                        <div class="table-responsive" id="div-1" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                                        
+                                    <th>Id_oferty</th>
+                                    <th>Id_produktu</th>
+                                    <th>Ilość</th>
+                                    <th>Oferta obowiązuje od</th>
+                                    <th>Oferta obowiązuje do</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>10</td>
+                                        <td>11.11.2014</td>
+                                        <td>20.11.2014</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+<!--<div id="div-1" class="CSSTableGenerator" style="display:none;">    
+    <table>
+    <tr>
+        <td>Id_oferty</td>
+        <td>Id_produktu</td>
+        <td>Ilość</td>
+        <td>Oferta obowiązuje od</td>
+        <td>Oferta obowiązuje do</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>10</td>
+        <td>11.11.2014</td>
+        <td>20.11.2014</td>
+    </tr>
+    </table>
+</div>
+-->
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-2" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                                        
+                                    <th>Id_oferty</th>
+                                    <th>Id_produktu</th>
+                                    <th>Ilość</th>
+                                    <th>Oferta obowiązuje od</th>
+                                    <th>Oferta obowiązuje do</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td>2</td>
+                                        <td>3</td>
+                <td>5</td>
+                <td>10.11.2014</td>
+                <td>18.11.2014</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+<!--
+<div id="div-2" class="CSSTableGenerator" style="display:none;">    
+    <table >
+    <tr>
+        <td>Id_oferty</td>
+        <td>Id_produktu</td>
+        <td>Ilość</td>
+        <td>Oferta obowiązuje od</td>
+        <td>Oferta obowiązuje do</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>5</td>
+        <td>10.11.2014</td>
+        <td>18.11.2014</td>
+    </tr>
+    </table>
+</div>
+-->

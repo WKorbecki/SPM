@@ -1,0 +1,160 @@
+<form class="form-inline" role="form">
+    <div class="form-group">
+        <label for="search">Szukaj</label>
+        &nbsp;
+        <input type="text" class="form-control" id="search">
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="form-group">
+        <label>Wyszukaj po</label>
+        &nbsp;
+        <select class="form-control">
+            <option>wszystkie pola</option>
+            <option>nazwa</option>
+            <option>opis</option>
+            <option>tagi</option>
+        </select>
+    </div>
+    &nbsp;
+    &nbsp;
+    <button type="submit" class="btn btn-default">Szukaj</button>
+</form>
+
+<br/>
+
+<div class="col-lg-12">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+            <th>Lp.</th>
+            <th>Imię i nazwisko</th>
+            <th>Adres</th>
+            <th>Telefon</th>
+            <th>E-mail</th>
+            <th>Login</th>
+            <th>Zaznacz</th>
+        </tr>
+            </thead>
+            <?php foreach ($uzytkownicy as $uzytkownik) : ?>
+    <tr>
+    <td><?= $this->escapeHtml($uzytkownik->id_uzytkownika) ?></td>
+    <td><?= $this->escapeHtml($uzytkownik->nazwa) ?></td>
+    <td><?= $this->escapeHtml($uzytkownik->adres) ?></td>
+    <td><?= $this->escapeHtml($uzytkownik->telefon) ?></td>
+    <td><?= $this->escapeHtml($uzytkownik->email) ?></td>
+    <td><?= $this->escapeHtml($uzytkownik->login) ?></td>
+    
+    <td><input type="checkbox"/></td>
+    </tr>
+<?php endforeach; ?>
+
+        <!-- Po nagłówku, tu zaczynają się dane: -->
+<!--
+        <tr>
+            <td>1</td>
+            <td>Marek Kowalski</td>
+            <td>Rzeszów, ul. Krakowska 45</td>
+            <td>+48 788695258</td>
+            <td>mkow@wp.pl</td>
+            <td>mkowalski</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Jan Kulczyk</td>
+            <td>Kraków, ul. 3 maja 62</td>
+            <td>+48 685548259</td>
+            <td>jankul@gmail.com</td>
+            <td>jkncwp</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Maria Nowicka</td>
+            <td>Lubzina 124</td>
+            <td>+48 584586584</td>
+            <td>marnow@gmail.com</td>
+            <td>marnow</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Ryszard Iwan</td>
+            <td>Tarnobrzeg, ul. Warszawska 215</td>
+            <td>+48 746537485</td>
+            <td>rychu@gmail.com</td>
+            <td>rysiwa</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Natalia Pawlicka</td>
+            <td>Ropczyce, ul. Krisego 1</td>
+            <td>+48 548569852</td>
+            <td>natpaw@gmail.com</td>
+            <td>natpaw</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Beata Kamińska</td>
+            <td>Kalisz, ul. Fabryczna 6</td>
+            <td>+48 645856582</td>
+            <td>beakam@gmail.com</td>
+            <td>beakam</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Sławomir Nowak</td>
+            <td>Warszawa, ul. Wiejska 8</td>
+            <td>+48 458358865</td>
+            <td>slanow@gmail.com</td>
+            <td>slanow</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Karolina Grzegorska</td>
+            <td>Kolbuszowa, ul Targowa 2</td>
+            <td>+48 548534432</td>
+            <td>kargrz@gmail.com</td>
+            <td>kargrz</td>
+            <td>
+                <input type="checkbox"/>
+            </td>
+        </tr>
+        -->
+
+    </table>
+        </div>
+</div>
+
+<br/>
+<br/>
+
+<a href="<?= $this->url('uzytkownik',array('action'=>'dodaj')) ?>"><button class="btn btn-default">Nowy</button></a>&nbsp;&nbsp;
+<a href="<?= $this->url('uzytkownik',array('action'=>'edytuj')) ?>"><button class="btn btn-default">Edytuj</button></a>&nbsp;&nbsp;
+<button class="btn btn-default">Usuń</button>&nbsp;&nbsp;
+
+<br/>
+<br/>

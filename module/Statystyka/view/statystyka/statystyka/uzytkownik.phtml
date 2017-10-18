@@ -1,0 +1,129 @@
+
+
+<script type="text/javascript">
+    var obj;
+    var obj2;
+function showHideDiv(id){
+    
+   obj = document.getElementById(id);
+    if (obj.style.display==="none"){
+      obj.style.display='block';     
+    } else if(obj.style.display==="block"){
+      obj.style.display='none';
+    }
+    if (obj2 !== null)
+    {
+   obj2.style.display='none';
+    }
+}
+function showHideDiv2(id){
+    obj.style.display='none';
+     obj2 = document.getElementById(id);
+    if (obj2.style.display==="none"){
+      obj2.style.display='block';     
+    } else if(obj2.style.display==="block"){
+      obj2.style.display='none';
+    }
+}
+</script>
+
+<p>
+    <!--
+<div class="CSSTableGenerator" > 
+    <table>
+        <tr>
+            <td>Uzytkownicy</td>
+        </tr>
+        <tr>
+            <td><a onclick="showHideDiv('div-1')">Jan Kowalski</a></td>
+           </tr>
+           <tr>
+               <td><a onclick="showHideDiv2('div-2')">Adam Nowak</a></td>
+           </tr>
+    </table>
+</div>
+-->
+<div class="row">
+                    <div class="col-lg-1">
+                          <div class="table-responsive" >
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Uzytkownicy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      <td><a onclick="showHideDiv('div-1')">Jan Kowalski</a></td>          
+                                  </tr>
+                                   <tr>
+                                        <td><a onclick="showHideDiv2('div-2')">Adam Nowak</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+</p>
+<p></p>
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-1" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Id_Użytkownika</th>
+                                        <th>Nazwa</th>
+                                        <th>Adres</th>
+                                        <th>Telefon</th>
+                                        <th>E-mail</th>
+                                        <th>login</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                    <td>1</td>
+                                    <td>Kowalski</td>
+                                    <td>Rzeszów</td>
+                                    <td>786871234</td>
+                                    <td>kowalski@kowalski.com</td>
+                                    <td>KowalJan</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-2" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Id_Użytkownika</th>
+                                        <th>Nazwa</th>
+                                        <th>Adres</th>
+                                        <th>Telefon</th>
+                                        <th>E-mail</th>
+                                        <th>login</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >                                    
+                                    <td>2</td>
+                                    <td>Nowak</td>
+                                    <td>Rzeszów</td>
+                                    <td>786871234</td>
+                                    <td>now@now.com</td>
+                                    <td>NowakAdam</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>

@@ -1,0 +1,120 @@
+
+
+<script type="text/javascript">
+    var obj;
+    var obj2;
+function showHideDiv(id){
+    
+   obj = document.getElementById(id);
+    if (obj.style.display==="none"){
+      obj.style.display='block';     
+    } else if(obj.style.display==="block"){
+      obj.style.display='none';
+    }
+    if (obj2 !== null)
+    {
+   obj2.style.display='none';
+    }
+}
+function showHideDiv2(id){
+    obj.style.display='none';
+     obj2 = document.getElementById(id);
+    if (obj2.style.display==="none"){
+      obj2.style.display='block';     
+    } else if(obj2.style.display==="block"){
+      obj2.style.display='none';
+    }
+}
+</script>
+
+<p>
+<div class="row">
+                    <div class="col-lg-1">
+                          <div class="table-responsive" >
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Produkt</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      <td><a onclick="showHideDiv('div-1')">Rutinoskorbin</a></td>          
+                                  </tr>
+                                   <tr>
+                                        <td><a onclick="showHideDiv2('div-2')">Ibuprom</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+</p>
+<p></p>
+
+
+
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-1" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                                        
+                                <th>Id_produktu</th>
+                                <th>Nazwa_produktu</th>
+                                <th>Opis</th>
+                                <th>Zdjęcie</th>
+                                <th>Cena_jednostkowa</th>
+                                <th>tagi</th>
+                                <th>zamienniki</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      <td>1</td>
+                                <td>Rutinoskorbin</td>
+                                <td>Preparat o skojarzonym działaniu witaminy C</td>
+                                <td></td>
+                                <td>8</td>
+                                <td>RUT</td>
+                                <td>Salixan C</td>
+                                       </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-2" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                                        
+                                <th>Id_produktu</th>
+                                <th>Nazwa_produktu</th>
+                                <th>Opis</th>
+                                <th>Zdjęcie</th>
+                                <th>Cena_jednostkowa</th>
+                                <th>tagi</th>
+                                <th>zamienniki</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                   <td>2</td>
+                                <td>Ibuprom</td>
+                                <td>Preparat o skojarzonym przeciwbólowym</td>
+                                <td></td>
+                                <td>8</td>
+                                <td>IB</td>
+                                <td>---</td>
+                                       </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>

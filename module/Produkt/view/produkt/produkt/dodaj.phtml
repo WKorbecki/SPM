@@ -1,0 +1,54 @@
+<h1 class="page-header">Dodawanie produktu</h1>
+<div class="col-lg-6">
+    <form enctype="multipart/form-data" action="<?= $this->url('produkt', array('action' => 'dodaj')); ?>" method="post">
+        <div class="form-group">
+            <label>Nazwa:</label>
+            <input class="form-control" name="Nazwa" placeholder="Nazwa"/>
+        </div>
+        <div class="form-group">
+            <label>Opis:</label>
+            <textarea class="form-control" name="Opis" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Zdjęcie:</label>
+            <input name="Zdjecie" accept="image/jpeg" type="file" onchange="readURL(this);">
+            <img style="width:100px;height:100px;" id="blah" src="#" alt="your image">
+            <!--<img style="width:50px;height:50px;" id="blah" src="#" alt="your image">-->
+        </div>
+        <div class="form-group">
+            <label>Cena:</label>
+            <input class="form-control" name="Cena" placeholder="Cena"/>
+        </div>
+    <!-- JAREK WRZUCI TU IKONY: -->
+        <div class="form-group input-group">
+            <label>Tagi:</label>
+            <input type="text" class="form-control" name="Tagi" placeholder="Tag">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+        <div class="form-group input-group">
+            <label>Zamienniki:</label>
+            <input type="text" class="form-control" name="Zamienniki" placeholder="Zamiennik">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+
+        <a href="<?= $this->url('uzytkownik',array()); ?>"><button type="submit" class="btn btn-default">Zatwierdź</button></a>
+        <button type="reset" class="btn btn-default">Wyczyść</button>
+    </form>
+</div>
+
+<script>
+         function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+<?php print_r($plik); ?>

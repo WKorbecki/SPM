@@ -1,0 +1,194 @@
+<form class="form-inline" role="form" method="post">
+    <div class="form-group">
+        <label for="search">Szukaj</label>
+        &nbsp;
+        <?php
+        $szukaj = (!empty($_POST['szukaj'])) ? $_POST['szukaj'] : null;
+        $wyszukaj_po = (!empty($_POST['wyszukaj_po'])) ? $_POST['wyszukaj_po'] : null;
+        ?>
+        <input type="text" class="form-control" name="szukaj" value="<?= $szukaj; ?>" id="search">
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="form-group">
+        <label>Wyszukaj po</label>
+        &nbsp;
+        <select class="form-control" name="wyszukaj_po">
+            <option>wszystkie pola</option>
+            <option>nazwa</option>
+            <option>opis</option>
+            <option>tagi</option>
+        </select>
+    </div>
+    &nbsp;
+    &nbsp;
+    <button type="submit" class="btn btn-default">Szukaj</button>
+</form>
+
+<br/>
+
+<!--
+<div class="col-lg-12">
+    <div class="table-responsive"> 
+        <table class="table table-bordered table-hover table-striped">-->
+<!--
+<tr>
+<td>
+Lp.
+</td>
+<td>
+Zdjęcie
+</td>
+<td>
+Nazwa
+</td>
+<td>
+Opis
+</td>
+<td>
+Cena jednostkowa
+</td>
+<td>
+Zaznacz
+</td>
+</tr> -->
+<div class="col-lg-12">
+    <div class="table-responsive"> 
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Foto</th>
+                    <th>Nazwa</th>
+                    <th>Opis</th>
+                    <th>Cena jednostkowa</th>
+                    <th>Zaznacz</th>
+                </tr>
+            </thead>
+
+            <?php foreach ($produkty as $produkt) : ?>
+                <tr>
+                    <td><?= $this->escapeHtml($produkt->id_produktu) ?></td>
+                    <td><img width="100" height="100" src="data:image/jpeg;base64,<?php echo base64_encode($produkt->zdjecie); ?>" /></td>
+                    <td><?= $this->escapeHtml($produkt->nazwa_produktu) ?></td>
+                    <td><?= $this->escapeHtml($produkt->opis) ?></td>
+                    <td><?= $this->escapeHtml($produkt->cena_jednostkowa) ?></td>
+                    <td><input type="checkbox" value="<?= $this->escapeHtml($produkt->id_produktu) ?>" name = "<?= $this->escapeHtml($produkt->id_produktu) ?>"/></td>
+                </tr>
+            <?php endforeach; ?>
+            <!--
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    <img style="width:100px;height:100px;" src="/SPM/public/img/produkty/aspirin.jpg"/>
+                </td>
+                <td>
+                    Aspirin
+                </td>
+                <td>
+                    Niesamowity, niepowtarzalny lek na wszystko! Aspirin firmy (...)
+                </td>
+                <td>
+                    10,00 zł
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    <img style="width:100px;height:100px;" src="/SPM/public/img/produkty/ehinacea.jpg"/>
+                </td>
+                <td>
+                    Ehinacea
+                </td>
+                <td>
+                    Panaceum na wszelkie dolegliwości! Nie możesz (...)
+                </td>
+                <td>
+                    15,00 zł
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    <img style="width:100px;height:100px;" src="/SPM/public/img/produkty/gripex_noc.jpg"/>
+                </td>
+                <td>
+                    Gripex noc
+                </td>
+                <td>
+                    Pomaga w grypie i w zasypianiu! (...)
+                </td>
+                <td>
+                    7,00 zł
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    <img style="width:100px;height:100px;" src="/SPM/public/img/produkty/rutinoscorbin.jpg"/>
+                </td>
+                <td>
+                    Rutinoscorbin
+                </td>
+                <td>
+                    Czujesz się niewyraźnie? Rutinoscorbin (...)
+                </td>
+                <td>
+                    25,00 zł
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+            </tr>
+            -->
+
+        </table>
+    </div>
+</div>
+
+
+<br/>
+<br/>
+
+<a href="<?= $this->url('produkt', array('action' => 'dodaj')); ?>"><button class="btn btn-default">Nowy</button></a>
+<a id="adresEdytuj" href="<?= $this->url('produkt', array('action' => 'edytuj')); ?>"><button class= "btn btn-default">Edytuj</button></a>
+<a id="adresUsun" href="<?= $this->url('produkt', array('action' => 'usun')); ?>"><button  class= "btn btn-default">Usuń</button></a>
+
+<script>
+    
+    tekstEdytuj=document.getElementById("adresEdytuj").getAttributeNode("href").value;
+    tekstUsun=document.getElementById("adresUsun").getAttributeNode("href").value;
+    
+    function getCheckboxesValues() {
+        return [].slice.apply(document.querySelectorAll("input[type=checkbox]"))
+                .filter(function (c) {
+                    return c.checked;
+                })
+                .map(function (c) {
+                    return c.value;
+                });
+    }
+    
+    $(document.querySelectorAll("input[type=checkbox]")).change(function() {
+    document.getElementById("adresEdytuj").getAttributeNode("href").value=tekstEdytuj+getCheckboxesValues();
+    document.getElementById("adresUsun").getAttributeNode("href").value=tekstUsun+getCheckboxesValues();
+}) 
+    
+</script>

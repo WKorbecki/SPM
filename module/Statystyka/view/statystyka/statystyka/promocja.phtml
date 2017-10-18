@@ -1,0 +1,109 @@
+<script type="text/javascript">
+    var obj;
+    var obj2;
+function showHideDiv(id){
+    
+   obj = document.getElementById(id);
+    if (obj.style.display==="none"){
+      obj.style.display='block';     
+    } else if(obj.style.display==="block"){
+      obj.style.display='none';
+    }
+    if (obj2 !== null)
+    {
+   obj2.style.display='none';
+    }
+}
+function showHideDiv2(id){
+    obj.style.display='none';
+     obj2 = document.getElementById(id);
+    if (obj2.style.display==="none"){
+      obj2.style.display='block';     
+    } else if(obj2.style.display==="block"){
+      obj2.style.display='none';
+    }
+}
+</script>
+<div class="row">
+                    <div class="col-lg-1">
+                          <div class="table-responsive" >
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                        <th>Promocje</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      <td><a onclick="showHideDiv('div-1')">Zniżka na Rutinoskorbin</a></td>          
+                                  </tr>
+                                   <tr>
+                                        <td><a onclick="showHideDiv2('div-2')">Ibuprom</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+</p>
+<p></p>
+   
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-1" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                    <th>Id_promocji</th>
+                                    <th>Typ</th>
+                                    <th>Obowiązuje od</th>
+                                    <th>Obowiązuje do</th>
+                                    <th>Reguła</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                      
+                                <td>10</td>
+                                <td>-50%</td>
+                                <td>11.12.2014</td>
+                                <td>13.12.2014</td>
+                                <td>---</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
+
+
+
+<div class="row">
+                    <div class="col-lg-6">
+                          <div class="table-responsive" id="div-2" style="display:none;">
+                            <table class="table table-bordered table-hover table-striped" >
+                                <thead>
+                                    <tr class="active">                             
+                                    <th>Id_promocji</th>
+                                    <th>Typ</th>
+                                    <th>Obowiązuje od</th>
+                                    <th>Obowiązuje do</th>
+                                    <th>Reguła</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >                                      
+                                <td>20</td>
+                                <td>-50%</td>
+                                <td>11.12.2014</td>
+                                <td>13.12.2014</td>
+                                <td>---</td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div>
